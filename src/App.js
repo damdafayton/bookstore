@@ -13,8 +13,8 @@ function App() {
         </ul>
       </nav>
       <Routes>
-        <Route path="/" element={<Books />} />
         <Route path="/categories" />
+        <Route path="*" element={<Books />} />
         <Route />
       </Routes>
     </div>
