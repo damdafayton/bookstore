@@ -6,8 +6,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './bootstrap';
 
+const githubBasename = process.env.REACT_APP_BASENAME || '/';
+
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode basename={githubBasename}>
     <Router>
       <App />
     </Router>

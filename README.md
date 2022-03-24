@@ -19,8 +19,6 @@
 ## Live Demo
 
 - [Live Demo Link](https://damdafayton.github.io/bookstore/build/)
-- [Heroku Deploy](https://damdafayton-bookstore.herokuapp.com/)
-- [Netlify Deploy](https://damdafayton-bookstore.netlify.app/)
 
 
 ## Available Scripts
