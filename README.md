@@ -2,9 +2,12 @@
 
 > This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-> "Math magicians" is a website for all fans of mathematics. It is a Single Page App (SPA) that allows users to:
-- Make simple calculations.
-- Read a random math-related quote.
+> The Bookstore is a website similar to the "Awesome Books" website built in the previous module. You will create an MVP version of it that allows you to:
+
+- Display a list of books.
+- Add a book.
+- Remove a selected book.
+- By building this application, you will learn how to use React and Redux.
 
 
 ## Built With
@@ -15,9 +18,9 @@
 
 ## Live Demo
 
-- [Live Demo Link](https://damdafayton.github.io/math-magicians/build/)
-- [Heroku Deploy](https://damdafayton-calculator.herokuapp.com/)
-- [Netlify Deploy](https://damdafayton-calculator.netlify.app/)
+- [Live Demo Link](https://damdafayton.github.io/bookstore/build/)
+- [Heroku Deploy](https://damdafayton-bookstore.herokuapp.com/)
+- [Netlify Deploy](https://damdafayton-bookstore.netlify.app/)
 
 
 ## Available Scripts
