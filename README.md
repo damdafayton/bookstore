@@ -29,7 +29,11 @@ In the project directory, you can run:
 
 ### Run the app in the development mode
 
+- Launch your terminal,
+- `cd` into the directory where you want to clone your project,
+- Enter the commands below
 ```
+$ git clone git@github.com:damdafayton/bookstore.git
 $ npm install
 $ npm start
 ````
