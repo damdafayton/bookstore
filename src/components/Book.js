@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import styles from './Book.module.scss';
 
 export default function Book({
   type, title, author, chapter, completed, key,
 }) {
+  const books = useSelector((state) => state.books);
+  console.log(books);
+
   return (
     <li key={key} className={`${styles.bookCard} row`}>
       <div className="col-sm-6">

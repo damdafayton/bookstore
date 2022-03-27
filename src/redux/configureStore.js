@@ -1,11 +1,16 @@
-import { combineReducers, createStoreHook } from 'react-redux'
-import booksReducer from './books/books'
-import categoriesReducer from './categories/categories'
+import { combineReducers, createStore } from 'redux';
+
+import booksReducer from './books/books';
+import categoriesReducer from './categories/categories';
 
 const rootReducer = combineReducers(
   {
     books: booksReducer,
-    categories: categoriesReducer
-  })
+    categories: categoriesReducer,
+  },
+);
 
-export const store = createStoreHook(rootReducer)
+export default createStore((state, action) => rootReducer(state, action), {
+  books: [],
+  categories: [],
+});
