@@ -15,15 +15,16 @@ const bookList = [
   },
 ];
 
-export const BOOK_CATEGORIES = [
-  'Fantasy',
-  'Sci-Fi',
-  'Mystery',
-  'Thriller',
-  'Romance',
-  'Westerns',
-  'Dystopian',
-  'Contemporary'];
+export const BOOK_CATEGORIES = {
+  Fantasy: { status: '10%' },
+  'Sci-Fi': { status: '10%' },
+  Mystery: { status: '10%' },
+  Thriller: { status: '10%' },
+  Romance: { status: '10%' },
+  Westerns: { status: '10%' },
+  Dystopian: { status: '10%' },
+  Contemporary: { status: '10%' },
+};
 
 const rootReducer = combineReducers(
   {
