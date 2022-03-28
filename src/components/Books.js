@@ -11,11 +11,12 @@ export default function Books() {
 
   const dispatch = useDispatch();
 
-  const populateBookStore = () => async (dispatch) => {
+  const populateBookStore = () => async (dispatch, getState) => {
     const books = await api.get();
     const keys = Object.keys(books);
+    const booksInStore = getState().books;
 
-    if (keys.length > 0) {
+    if (keys.length > booksInStore.length) { // Check to not re-populate
       keys.forEach((id) => {
         const { title, category, author } = books[id][0];
         dispatch(addBook({
