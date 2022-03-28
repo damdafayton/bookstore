@@ -2,12 +2,19 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
+import * as api from '../api';
 
 export default function FormBox() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const dispatch = useDispatch();
+
+  const fetchAndAdd = () => async (dispatch) => {
+    const id = uuidv4();
+    await api.post({ title, author, id });
+    dispatch(addBook({ title, author, id }));
+  };
 
   function keyUpHandler(event) {
     switch (event.target.name) {
@@ -34,7 +41,7 @@ export default function FormBox() {
           <option>Action</option>
         </select>
         <button
-          onClick={() => dispatch(addBook({ title, author, id: uuidv4() }))}
+          onClick={() => dispatch(fetchAndAdd())}
           className="col-6 col-md-2"
           type="button"
         >
