@@ -1,8 +1,13 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/books';
 
 export default function FormBox() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+
+  const dispatch = useDispatch();
 
   function keyUpHandler(event) {
     switch (event.target.name) {
@@ -28,7 +33,13 @@ export default function FormBox() {
           <option disabled="disabled" value="cate">Category</option>
           <option>Action</option>
         </select>
-        <button className="col-6 col-md-2" type="submit">ADD BOOK</button>
+        <button
+          onClick={() => dispatch(addBook({ title, author, id: uuidv4() }))}
+          className="col-6 col-md-2"
+          type="button"
+        >
+          ADD BOOK
+        </button>
       </div>
     </form>
   );
