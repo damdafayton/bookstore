@@ -14,6 +14,8 @@ export default function categoriesReducer(state = initialState, action) {
   }
 }
 
-test('if categories/under_construction action works', () => {
-  expect(categoriesReducer(initialState, underConstruction())).toBe(underConstructionStr);
-});
+export const categoryTests = () => {
+  test('if categories/under_construction action works', () => {
+    expect(categoriesReducer(initialState, underConstruction())).toBe(underConstructionStr);
+  });
+};

@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styles from './Book.module.scss';
 
+import { removeBook } from '../redux/books/books';
+
 export default function Book({
-  type, title, author, chapter, completed, key,
+  type, title, author, chapter, completed, id,
 }) {
-  const books = useSelector((state) => state.books);
-  console.log(books);
+  const dispatch = useDispatch();
 
   return (
-    <li key={key} className={`${styles.bookCard} row`}>
+    <li className={`${styles.bookCard} row`}>
       <div className="col-sm-6">
         <div>
           <p>{type}</p>
@@ -18,9 +19,19 @@ export default function Book({
         </div>
         <div>
           <ul className={`${styles.bookControl} d-flex`}>
-            <li>Comments</li>
-            <li>Remove</li>
-            <li>Edit</li>
+            <li><span>Comments</span></li>
+            <li>
+              <span
+                tabIndex={id}
+                id={id}
+                role="button"
+                onKeyUp={(e) => { dispatch(removeBook(e.target.id)); }}
+                onClick={(e) => { dispatch(removeBook(e.target.id)); }}
+              >
+                Remove
+              </span>
+            </li>
+            <li><span>Edit</span></li>
           </ul>
         </div>
       </div>
@@ -44,7 +55,7 @@ Book.propTypes = {
   author: PropTypes.string,
   chapter: PropTypes.string,
   completed: PropTypes.string,
-  key: PropTypes.string,
+  id: PropTypes.string,
 };
 
 Book.defaultProps = {
@@ -53,5 +64,5 @@ Book.defaultProps = {
   author: '',
   chapter: '',
   completed: '',
-  key: '',
+  id: '',
 };

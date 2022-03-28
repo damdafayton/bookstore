@@ -13,11 +13,11 @@ const githubBasename = process.env.REACT_APP_BASENAME || '/';
 
 ReactDOM.render(
   <React.StrictMode basename={githubBasename}>
-    {/* <Provider store={store}> */}
-    <Router>
-      <App />
-    </Router>
-    {/* </Provider> */}
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -1,17 +1,10 @@
+import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
 import FormBox from './Form';
 
 export default function Books() {
-  const books = [
-    {
-      type: 'Action',
-      title: 'The Hunger Games',
-      author: 'Suzanna Collins',
-      chapter: 'Chapter 17',
-      completed: '64%',
-    },
-  ];
+  const books = useSelector((state) => state.books);
 
   return (
     <>
@@ -24,6 +17,7 @@ export default function Books() {
             chapter={book.chapter}
             completed={book.completed}
             key={uuidv4()}
+            id={book.id}
           />
         ))}
       </ul>
