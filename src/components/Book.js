@@ -4,10 +4,19 @@ import styles from './Book.module.scss';
 
 import { removeBook } from '../redux/books/books';
 
+import * as api from '../api';
+
 export default function Book({
   type, title, author, chapter, completed, id,
 }) {
   const dispatch = useDispatch();
+
+  const fetchAndRemove = (event) => async (dispatch) => {
+    const { id } = event.target;
+    console.log('id = ', id);
+    await api.deleteItem(id);
+    dispatch(removeBook(id));
+  };
 
   return (
     <li className={`${styles.bookCard} row`}>
@@ -26,7 +35,7 @@ export default function Book({
                 id={id}
                 role="button"
                 onKeyUp={(e) => { dispatch(removeBook(e.target.id)); }}
-                onClick={(e) => { dispatch(removeBook(e.target.id)); }}
+                onClick={(event) => dispatch(fetchAndRemove(event))}
               >
                 Remove
               </span>
