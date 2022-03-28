@@ -1,6 +1,7 @@
-import booksReducer from "../books/books"
-import categoriesReducer from "../categories/categories"
+import { bookTests } from '../books/books';
+import { categoryTests } from '../categories/categories';
 
-test('STARTER', () => {
-  expect({}).toEqual({})
-})
+describe('STARTER', () => {
+  bookTests();
+  categoryTests();
+});
