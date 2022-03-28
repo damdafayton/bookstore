@@ -15,6 +15,17 @@ const bookList = [
   },
 ];
 
+export const BOOK_CATEGORIES = {
+  Fantasy: { status: '50%' },
+  'Sci-Fi': { status: '10%' },
+  Mystery: { status: '20%' },
+  Thriller: { status: '6%' },
+  Romance: { status: '60%' },
+  Westerns: { status: '80%' },
+  Dystopian: { status: '34%' },
+  Contemporary: { status: '24%' },
+};
+
 const rootReducer = combineReducers(
   {
     books: booksReducer,
@@ -24,5 +35,5 @@ const rootReducer = combineReducers(
 
 export default createStore((state, action) => rootReducer(state, action), {
   books: bookList,
-  categories: [],
+  categories: BOOK_CATEGORIES,
 });

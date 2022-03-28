@@ -1,5 +1,6 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 import Books from './components/Books';
+import Categories from './components/Categories';
 import './App.scss';
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
         </ul>
       </nav>
       <Routes>
-        <Route path="/categories" />
+        <Route path="/categories" element={<Categories />} />
         <Route path="*" element={<Books />} />
         <Route />
       </Routes>

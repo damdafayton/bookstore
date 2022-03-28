@@ -4,7 +4,7 @@ export const underConstruction = () => ({ type: UNDER_CONSTRUCTION });
 
 const underConstructionStr = 'Under Construction';
 
-export default function categoriesReducer(state = [], action) {
+export default function categoriesReducer(state = {}, action) {
   switch (action.type) {
     case UNDER_CONSTRUCTION:
       return underConstructionStr;
