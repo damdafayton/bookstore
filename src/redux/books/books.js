@@ -4,16 +4,6 @@ const ADD_BOOK = 'books/addbook';
 const REMOVE_BOOK = 'books/removebook';
 const SELECT_CATEGORY = 'books/select_category';
 
-export const BOOK_CATEGORIES = [
-  'Fantasy',
-  'Sci-Fi',
-  'Mystery',
-  'Thriller',
-  'Romance',
-  'Westerns',
-  'Dystopian',
-  'Contemporary'];
-
 export const addBook = ({ name, id, category = 'None' }) => ({
   type: ADD_BOOK, name, id, category,
 });
@@ -37,11 +27,11 @@ const id = uuidv4();
 const id2 = uuidv4();
 
 const initialState = [
-  { name: 'My New Book', id, category: BOOK_CATEGORIES[1] },
+  { name: 'My New Book', id, category: 'Fantasy' },
 ];
 
 const newState = [
-  { name: 'My New Book', id, category: BOOK_CATEGORIES[1] },
+  { name: 'My New Book', id, category: 'Fantasy' },
   { name: 'My Second Book', id: id2, category: 'None' },
 ];
 
