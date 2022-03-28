@@ -16,14 +16,14 @@ const bookList = [
 ];
 
 export const BOOK_CATEGORIES = {
-  Fantasy: { status: '10%' },
+  Fantasy: { status: '50%' },
   'Sci-Fi': { status: '10%' },
-  Mystery: { status: '10%' },
-  Thriller: { status: '10%' },
-  Romance: { status: '10%' },
-  Westerns: { status: '10%' },
-  Dystopian: { status: '10%' },
-  Contemporary: { status: '10%' },
+  Mystery: { status: '20%' },
+  Thriller: { status: '6%' },
+  Romance: { status: '60%' },
+  Westerns: { status: '80%' },
+  Dystopian: { status: '34%' },
+  Contemporary: { status: '24%' },
 };
 
 const rootReducer = combineReducers(

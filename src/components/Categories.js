@@ -1,16 +1,15 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { checkStatus } from '../redux/categories/categories';
 
 export default function Categories() {
   const categories = useSelector((state) => state.categories);
-  const dispatch = useDispatch();
 
   function statusHandler(e) {
     console.log(e.target.name);
-    // const status = dispatch(checkStatus(e.target.name));
-    // console.log(status);
-    // e.target.nextElementSibling.innerText = status;
+    const targetCategory = Object.keys(categories).filter((category) => category === e.target.name);
+    const { status } = categories[targetCategory[0]];
+    console.log(status);
+    e.target.nextElementSibling.innerText = status;
   }
 
   return (
