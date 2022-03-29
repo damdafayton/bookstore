@@ -36,14 +36,14 @@ export default function Book({
           </div>
         </div>
       </div>
-      <div className={`${styles.percent_seperator} col-md-3 justify-content-center my-4 d-flex align-items-center`}>
+      <div className={`${styles.percent_seperator} col-md-4 col-lg-3 justify-content-center my-4 d-flex align-items-center`}>
         <span className={styles.oval} />
         <div>
           <span className={styles.percent_text}>{completed || '100%'}</span>
           <span className={styles.completed_text}>Completed</span>
         </div>
       </div>
-      <div className="col-md-3 ps-md-5 d-flex justify-content-center">
+      <div className="col-md-2 col-lg-3 ps-md-5 d-flex justify-content-center">
         <div>
           <p className={styles.current_chapter}>CURRENT CHAPTER</p>
           <p className={styles.current_chapter_number}>{`Chapter: ${chapter || '1'}`}</p>
