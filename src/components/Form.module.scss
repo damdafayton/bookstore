@@ -1,8 +1,8 @@
-$warm-grey: #888888;
+$warm-grey: #888;
 $pinkish-grey: #c4c4c4;
 
 .title {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   font-stretch: normal;
@@ -14,7 +14,7 @@ $pinkish-grey: #c4c4c4;
 
 .control {
   flex-grow: 1;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   margin: 0.75rem 0;
   padding: 0.25rem 0;
