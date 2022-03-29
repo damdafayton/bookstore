@@ -19,7 +19,7 @@ export default function Books() {
       <ul>
         {books.map((book) => (
           <Book
-            type={book.type}
+            category={book.category}
             title={book.title}
             author={book.author}
             chapter={book.chapter}
@@ -29,6 +29,7 @@ export default function Books() {
           />
         ))}
       </ul>
+      <div className="seperator row d-none d-md-inline" />
       <FormBox />
     </>
   );
