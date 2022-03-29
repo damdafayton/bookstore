@@ -1,22 +1,13 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import styles from './Book.module.scss';
+import { asyncBookRemove } from '../redux/configureStore';
 
-import { removeBook } from '../redux/books/books';
-
-import * as api from '../api';
 
 export default function Book({
   type, title, author, chapter, completed, id,
 }) {
   const dispatch = useDispatch();
-
-  const fetchAndRemove = (event) => async (dispatch) => {
-    const { id } = event.target;
-    console.log('id = ', id);
-    await api.deleteItem(id);
-    dispatch(removeBook(id));
-  };
 
   return (
     <li className={`${styles.bookCard} row`}>
@@ -34,8 +25,8 @@ export default function Book({
                 tabIndex={id}
                 id={id}
                 role="button"
-                onKeyUp={(e) => { dispatch(removeBook(e.target.id)); }}
-                onClick={(event) => dispatch(fetchAndRemove(event))}
+                onKeyUp={(event) => dispatch(asyncBookRemove(event))}
+                onClick={(event) => dispatch(asyncBookRemove(event))}
               >
                 Remove
               </span>

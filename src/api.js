@@ -18,21 +18,20 @@ const post = ({
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    // 'Content-Type': 'application/x-www-form-urlencoded',
   },
   body: JSON.stringify({
     item_id: id, title, category, author,
   }),
-}).then((res) => res.text());
+})
+  .then((res) => res.text());
 
-const deleteItem = (id) => fetch(`${url + appID}/books/${id}`, {
+const deleter = (id) => fetch(`${url + appID}/books/${id}`, {
   method: 'DELETE',
   headers: {
     'Content-Type': 'application/json',
-    // 'Content-Type': 'application/x-www-form-urlencoded',
   },
   body: JSON.stringify({ item_id: id }),
 })
   .then((res) => res.text());
 
-export { get, post, deleteItem };
+export { get, post, deleter };

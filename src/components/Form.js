@@ -1,20 +1,13 @@
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
-import * as api from '../api';
+import { asyncBookAdd } from '../redux/configureStore';
+
 
 export default function FormBox() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
   const dispatch = useDispatch();
-
-  const fetchAndAdd = () => async (dispatch) => {
-    const id = uuidv4();
-    await api.post({ title, author, id });
-    dispatch(addBook({ title, author, id }));
-  };
 
   function keyUpHandler(event) {
     switch (event.target.name) {
@@ -34,15 +27,16 @@ export default function FormBox() {
     <form>
       <h3>ADD NEW BOOK</h3>
       <div className="row g-1">
-        <input name="title" onChange={(e) => keyUpHandler(e)} className="col-sm-6 col-md-4" type="text" placeholder="Book Title" value={title} />
-        <input name="author" onChange={(e) => keyUpHandler(e)} className="col-sm-6 col-md-3" type="text" placeholder="Author" value={author} />
-        <select className="col-6 col-md-3" defaultValue="cate">
+        <input name="title" onChange={(e) => keyUpHandler(e)}
+          className="col-12 col-sm-6 col-md-6" type="text" placeholder="Book Title" value={title} />
+        {/* <input name="author" onChange={(e) => keyUpHandler(e)} className="col-sm-6 col-md-3" type="text" placeholder="Author" value={author} /> */}
+        <select className="col-8 col-sm-4 col-md-4" defaultValue="cate">
           <option disabled="disabled" value="cate">Category</option>
           <option>Action</option>
         </select>
         <button
-          onClick={() => dispatch(fetchAndAdd())}
-          className="col-6 col-md-2"
+          onClick={() => dispatch(asyncBookAdd({ title, author }))}
+          className="col-4 col-sm-2 col-md-2"
           type="button"
         >
           ADD BOOK

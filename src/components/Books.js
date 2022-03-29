@@ -3,31 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import Book from './Book';
 import FormBox from './Form';
-import * as api from '../api';
-import { addBook } from '../redux/books/books';
+import { fetchBooks } from '../redux/configureStore';
 
 export default function Books() {
   const books = useSelector((state) => state.books);
 
   const dispatch = useDispatch();
 
-  const populateBookStore = () => async (dispatch, getState) => {
-    const books = await api.get();
-    const keys = Object.keys(books);
-    const booksInStore = getState().books;
-
-    if (keys.length > booksInStore.length) { // Check to not re-populate
-      keys.forEach((id) => {
-        const { title, category, author } = books[id][0];
-        dispatch(addBook({
-          id, title, category, author,
-        }));
-      });
-    }
-  };
-
   useEffect(() => {
-    dispatch(populateBookStore());
+    dispatch(fetchBooks);
   }, []);
 
   return (

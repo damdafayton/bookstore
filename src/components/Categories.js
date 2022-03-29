@@ -5,10 +5,10 @@ export default function Categories() {
   const categories = useSelector((state) => state.categories);
 
   function statusHandler(e) {
-    console.log(e.target.name);
+
     const targetCategory = Object.keys(categories).filter((category) => category === e.target.name);
     const { status } = categories[targetCategory[0]];
-    console.log(status);
+
     e.target.nextElementSibling.innerText = status;
   }
 
