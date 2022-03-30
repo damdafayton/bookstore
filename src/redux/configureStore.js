@@ -33,7 +33,6 @@ export const fetchBooks = async (dispatch, getState) => {
 
 export const asyncBookRemove = (event) => async (dispatch) => {
   const { id } = event.target;
-  console.log('id = ', id);
   await api.deleter(id);
   dispatch(removeBook(id));
 };
