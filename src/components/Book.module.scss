@@ -77,26 +77,30 @@ h3 {
   border-right: solid 1px var(--grey-border);
 }
 
-.current_chapter {
-  margin: 0.063rem 0;
-  opacity: 0.5;
-  font-family: "RobotoSlab", sans-serif;
-  font-size: 0.813rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: var(--black-two);
-}
+.button_container {
+  height: min-content;
 
-.current_chapter_number {
-  font-family: "RobotoSlab", sans-serif;
-  font-size: 1rem;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: -0.4px;
-  color: var(--black-two);
+  .current_chapter {
+    margin: 0.063rem 0;
+    opacity: 0.5;
+    font-family: "RobotoSlab", sans-serif;
+    font-size: 0.813rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--black-two);
+  }
+
+  .current_chapter_number {
+    font-family: "RobotoSlab", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.4px;
+    color: var(--black-two);
+  }
 }

@@ -46,9 +46,9 @@ export default function Book({
           <span className={styles.completed_text}>Completed</span>
         </div>
       </div>
-      <div className="col-md-2 col-lg-3 ps-md-5 d-flex justify-content-center">
-        <div>
-          <p className={`${styles.current_chapter} my-2`}>CURRENT CHAPTER</p>
+      <div className="col-md-2 col-lg-3 ps-md-5 d-flex justify-content-center align-items-center">
+        <div className={styles.button_container}>
+          <p className={`${styles.current_chapter} mb-2`}>CURRENT CHAPTER</p>
           <p className={`${styles.current_chapter_number} mb-2`}>{`Chapter: ${chapter || '1'}`}</p>
           <button type="button" className="btn_azure mb-0">UPDATE PROGRESS</button>
         </div>
