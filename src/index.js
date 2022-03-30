@@ -12,9 +12,9 @@ import store from './redux/configureStore';
 const githubBasename = process.env.REACT_APP_BASENAME || '/';
 
 ReactDOM.render(
-  <React.StrictMode basename={githubBasename}>
+  <React.StrictMode>
     <Provider store={store}>
-      <Router>
+      <Router basename={githubBasename}>
         <App />
       </Router>
     </Provider>
