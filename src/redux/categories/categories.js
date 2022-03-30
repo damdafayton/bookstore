@@ -18,7 +18,7 @@ export const BOOK_CATEGORIES = {
 export default function categoriesReducer(state = BOOK_CATEGORIES, action) {
   switch (action.type) {
     case UNDER_CONSTRUCTION:
-      return underConstructionStr;
+      return { UNDER_CONSTRUCTION: { status: underConstructionStr } };
     default:
       return state;
   }
