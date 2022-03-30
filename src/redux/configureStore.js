@@ -38,8 +38,12 @@ export const asyncBookRemove = (event) => async (dispatch) => {
   dispatch(removeBook(id));
 };
 
-export const asyncBookAdd = ({ title, author }) => async (dispatch) => {
+export const asyncBookAdd = ({ title, author, category }) => async (dispatch) => {
   const id = uuidv4();
-  await api.post({ title, author, id });
-  dispatch(addBook({ title, author, id }));
+  await api.post({
+    title, author, id, category,
+  });
+  dispatch(addBook({
+    title, author, id, category,
+  }));
 };

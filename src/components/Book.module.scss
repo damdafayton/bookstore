@@ -44,6 +44,7 @@ h3 {
 }
 
 .completed_text {
+  margin: 0 0.5rem;
   display: block;
   text-align: center;
   height: 1.125rem;
@@ -98,23 +99,4 @@ h3 {
   line-height: normal;
   letter-spacing: -0.4px;
   color: var(--black-two);
-}
-
-.oval {
-  position: relative;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  border: double 0.5rem transparent;
-  background:
-    linear-gradient(to bottom, white, white),
-    linear-gradient(to bottom, #307bbe, #379cf6),
-    linear-gradient(to top, #307bbe, #379cf6),
-    linear-gradient(to top, #307bbe, #379cf6),
-    linear-gradient(to bottom, #307bbe, #379cf6);
-  background-repeat: no-repeat;
-  background-size: auto, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
-  background-position: 0 0, 100% 0%, 0% 100%, 100% 100%, 0 0;
-  background-clip: content-box, border-box, border-box, border-box, border-box, border-box;
-  background-origin: border-box;
 }

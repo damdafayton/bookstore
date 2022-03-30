@@ -1,0 +1,40 @@
+:root {
+  --direction: bottom;
+}
+
+.oval {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+
+  .box {
+    position: absolute;
+    top: 0;
+    border: double 0.4rem transparent;
+    background:
+      linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255)),
+      linear-gradient(to var(--direction), #379cf6, #379cf6);
+    background-repeat: no-repeat;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-size: auto, 50% var(--percent_starter);
+    background-position: 100% 0;
+    background-clip: content-box, border-box;
+    background-origin: border-box;
+    transform: rotate(var(--rotate));
+  }
+
+  .border {
+    position: absolute;
+    background: linear-gradient(to right, #ddd, #ddd);
+    background-repeat: no-repeat;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-size: auto;
+    background-position: 100% 0;
+    background-clip: border-box;
+    background-origin: border-box;
+  }
+}

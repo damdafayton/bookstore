@@ -5,8 +5,7 @@ import { underConstruction } from '../redux/categories/categories';
 export default function Categories() {
   const dispatch = useDispatch();
 
-  // MAKE STATE UNDER CONSTRUCTION
-
+  // MAKE STATE INTO UNDER CONSTRUCTION
   dispatch(underConstruction());
 
   const categories = useSelector((state) => state.categories);
