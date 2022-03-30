@@ -2,6 +2,7 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import Books from './components/Books';
 import Categories from './components/Categories';
 import './App.scss';
+import profileIcon from './profile.png';
 
 function App() {
   return (
@@ -10,10 +11,10 @@ function App() {
         <nav className="d-flex align-items-center panel-bg py-4">
           <h1 className="fw-bolder">Bookstore CMS</h1>
           <ul className="d-flex mb-2">
-            <li><NavLink className="nav_link" to="/books">BOOKS</NavLink></li>
+            <li><NavLink className="nav_link" to="/">BOOKS</NavLink></li>
             <li><NavLink className="nav_link" to="/categories">CATEGORIES</NavLink></li>
           </ul>
-          <img alt="profile icon" className="ms-auto" src="/profile.png" />
+          <img alt="profile icon" className="ms-auto" src={profileIcon} />
         </nav>
       </div>
       <div className="px-4 px-sm-5 mx-sm-2">
