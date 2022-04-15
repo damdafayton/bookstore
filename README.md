@@ -4,7 +4,7 @@ Magic-books Inc. is a fictional company based in Germany. They have requested us
 
 ## Built With
 
-- HTML, CSS, JS
+- HTML, CSS, JavaScript
 - Bootstrap, SCSS, React
 
 
