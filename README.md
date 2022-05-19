@@ -2,6 +2,8 @@
 
 Magic-books Inc. is a fictional company based in Germany. They have requested us to help to build the front-end of an application that will help them organize and manage their bookstore. They want it to be fast, dynamic and responsive to their actions and therefore we decided to build it with React & Redux.
 
+I have built [my first npm package](https://www.npmjs.com/package/round-percentage-bar) for this project; which is a react module to draw circular percentage of given number.
+
 ## Built With
 
 - HTML, CSS, JavaScript
